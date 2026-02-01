@@ -4,7 +4,7 @@ local HttpService = game:GetService("HttpService")
 local WEBHOOK_URL = "https://discord.com/api/webhooks/1457374221083742383/fisgnbNmlTlzlZtsuKiprfyescBVSbbBOEsI1Y_kJh45Py72yM1Ah7mKKrNINTGmgX61" --replace this with ur webhook url
 
 local data = {
-    content = "Someone just executed the script!"
+    content = "Someone just executed the UNIVERSAL V2 SCRIPT!"
 }
 
 local json = HttpService:JSONEncode(data)
