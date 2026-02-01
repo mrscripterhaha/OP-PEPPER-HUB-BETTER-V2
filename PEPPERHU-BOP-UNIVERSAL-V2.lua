@@ -1,3 +1,21 @@
+⁨⁨lua
+local HttpService = game:GetService("HttpService")
+
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1457374221083742383/fisgnbNmlTlzlZtsuKiprfyescBVSbbBOEsI1Y_kJh45Py72yM1Ah7mKKrNINTGmgX61" --replace this with ur webhook url
+
+local data = {
+    content = "Someone just executed the script!"
+}
+
+local json = HttpService:JSONEncode(data)
+
+pcall(function()
+    HttpService:PostAsync(
+        WEBHOOK_URL,
+        json,
+        Enum.HttpContentType.ApplicationJson
+    )
+end)
 --==================================================
 -- 🌶️ PEPPER HUB | FULLY FUNCTIONAL HUB WITH FLY PANEL
 --==================================================
