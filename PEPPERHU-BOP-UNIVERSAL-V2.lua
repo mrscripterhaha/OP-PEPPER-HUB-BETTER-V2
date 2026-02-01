@@ -31,7 +31,7 @@ end
 -- ======================
 -- Text Below
 -- ======================
-sendWebhook("**__Execution Detected!__**", "Pepper Hub UNIVERSAL 2.0 Has Been Executed!")
+sendWebhook("**__Execution Detected!__**", "Pepper Hub UNIVERSAL 2.0 Has Been Executed @soulagainlmao !")
 --==================================================
 -- 🌶️ PEPPER HUB | FULLY FUNCTIONAL HUB WITH FLY PANEL
 --==================================================
