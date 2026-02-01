@@ -1,21 +1,37 @@
-⁨⁨
-local HttpService = game:GetService("HttpService")
+local WEBHOOK_URL = "https://discord.com/api/webhooks/1457374221083742383/fisgnbNmlTlzlZtsuKiprfyescBVSbbBOEsI1Y_kJh45Py72yM1Ah7mKKrNINTGmgX61" 
 
-local WEBHOOK_URL = "https://discord.com/api/webhooks/1457374221083742383/fisgnbNmlTlzlZtsuKiprfyescBVSbbBOEsI1Y_kJh45Py72yM1Ah7mKKrNINTGmgX61" --replace this with ur webhook url
+local http_request =
+    http_request or
+    request or
+    syn and syn.request or
+    fluxus and fluxus.request or
+    KRNL_LOADED and request
 
-local data = {
-    content = "Someone just executed the UNIVERSAL V2 SCRIPT!"
-}
+assert(http_request, "Executor does not support HTTP requests")
 
-local json = HttpService:JSONEncode(data)
+local function sendWebhook(title, message)
+    local payload = {
+        embeds = {{
+            title = title,
+            description = message,
+            color = 0xF00000,
+        }}
+    }
 
-pcall(function()
-    HttpService:PostAsync(
-        WEBHOOK_URL,
-        json,
-        Enum.HttpContentType.ApplicationJson
-    )
-end)
+    http_request({
+        Url = WEBHOOK_URL,
+        Method = "POST",
+        Headers = {
+            ["Content-Type"] = "application/json"
+        },
+        Body = game:GetService("HttpService"):JSONEncode(payload)
+    })
+end
+
+-- ======================
+-- Text Below
+-- ======================
+sendWebhook("**__Execution Detected!__**", "Pepper Hub UNIVERSAL 2.0 Has Been Executed!")
 --==================================================
 -- 🌶️ PEPPER HUB | FULLY FUNCTIONAL HUB WITH FLY PANEL
 --==================================================
